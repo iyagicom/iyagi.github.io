@@ -27,7 +27,7 @@ Visit the official website for product information, releases, and documentation.
 
 ## Website
 
-https://iyagi.github.io
+https://iyagicom.github.io
 
 ## License
 
