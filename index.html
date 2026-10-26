@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="IYAGI — 실용적인 소프트웨어를 만드는 독립 개발 브랜드. Linux와 Windows를 위한 프로그램을 소개합니다.">
+  <title>IYAGI — Practical Software</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1020;
+      --panel: #121a2c;
+      --panel2: #172238;
+      --text: #f4f7fb;
+      --muted: #aab6ca;
+      --line: rgba(255,255,255,.12);
+      --accent: #8bd5ff;
+      --accent2: #b6f0d2;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background:
+        radial-gradient(ellipse at 80% 0%, rgba(65,130,190,.18), transparent 38%),
+        radial-gradient(ellipse at 0% 20%, rgba(85,190,150,.10), transparent 35%), var(--bg);
+      color: var(--text); font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    header { border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: .12em; }
+    .mark { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 11px; color: #07111d; background: linear-gradient(135deg, var(--accent), var(--accent2)); font-weight: 900; letter-spacing: 0; }
+    nav { display: flex; gap: 24px; flex-wrap: wrap; }
+    nav a { color: var(--muted); text-decoration: none; font-size: .94rem; }
+    nav a:hover, .text-link:hover { color: var(--accent); }
+    .hero { padding: 100px 0 84px; }
+    .eyebrow { color: var(--accent2); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 750; }
+    h1 { font-size: clamp(3rem, 8vw, 6.4rem); line-height: .98; letter-spacing: -.065em; margin: 18px 0 24px; }
+    .hero p { max-width: 700px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.28rem); }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 12px; border: 1px solid var(--line); text-decoration: none; font-weight: 700; }
+    .btn.primary { background: var(--text); color: #101827; border-color: var(--text); }
+    .btn:hover { transform: translateY(-1px); }
+    section { padding: 54px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+    h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 2.7rem); letter-spacing: -.04em; }
+    .section-head p { color: var(--muted); margin: 0; max-width: 480px; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+    .card { background: linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.02)); border: 1px solid var(--line); border-radius: 18px; padding: 24px; min-height: 190px; }
+    .card .tag { color: var(--accent); font-size: .76rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .card h3 { margin: 12px 0 8px; font-size: 1.28rem; }
+    .card p { color: var(--muted); margin: 0; }
+    .about { display: grid; grid-template-columns: .85fr 1.15fr; gap: 40px; align-items: start; }
+    .about-copy { color: var(--muted); max-width: 680px; }
+    .principles { display: grid; gap: 12px; }
+    .principle { display: flex; gap: 14px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.025); }
+    .dot { flex: 0 0 9px; height: 9px; border-radius: 50%; margin-top: 9px; background: var(--accent2); }
+    .principle strong { display: block; margin-bottom: 2px; }
+    .principle span { color: var(--muted); font-size: .94rem; }
+    .contact { border: 1px solid var(--line); background: linear-gradient(120deg, rgba(139,213,255,.09), rgba(182,240,210,.045)); border-radius: 22px; padding: clamp(24px, 5vw, 46px); }
+    .contact p { color: var(--muted); max-width: 650px; }
+    footer { margin-top: 50px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    .foot { min-height: 82px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .text-link { color: var(--text); text-underline-offset: 4px; }
+    @media (max-width: 760px) {
+      .hero { padding: 72px 0 58px; }
+      .nav { align-items: flex-start; padding: 18px 0; flex-direction: column; }
+      nav { gap: 16px; }
+      .grid { grid-template-columns: 1fr; }
+      .section-head, .about { display: block; }
+      .section-head p { margin-top: 10px; }
+      .principles { margin-top: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="IYAGI home"><span class="mark">I</span><span>IYAGI</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Links</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Independent Software Development</div>
+        <h1>Software that<br>gets things done.</h1>
+        <p>IYAGI makes practical software for everyday work. We focus on useful features, straightforward interfaces, and independent development for Linux and Windows.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore projects</a>
+          <a class="btn" href="https://github.com/iyagicom" target="_blank" rel="noopener noreferrer">GitHub organization ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p>A growing collection of tools and experiments from IYAGI.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="tag">File Management</div>
+            <h3>FileIyagi</h3>
+            <p>A multi-pane file manager built for practical file operations and network access.</p>
+          </article>
+          <article class="card">
+            <div class="tag">Documents</div>
+            <h3>PDFIyagi</h3>
+            <p>Tools for working with PDF documents.</p>
+          </article>
+          <article class="card">
+            <div class="tag">Input</div>
+            <h3>HangulIyagi</h3>
+            <p>A standalone Korean input method project.</p>
+          </article>
+          <article class="card">
+            <div class="tag">Desktop Utility</div>
+            <h3>ClipIyagi</h3>
+            <p>A clipboard utility for desktop workflows.</p>
+          </article>
+          <article class="card">
+            <div class="tag">Programming Languages</div>
+            <h3>LangIyagi</h3>
+            <p>An experimental programming language project focused on AI-assisted coding.</p>
+          </article>
+          <article class="card">
+            <div class="tag">More to come</div>
+            <h3>New ideas</h3>
+            <p>More tools and experiments will appear here as they become ready to share.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about">
+        <div>
+          <div class="eyebrow">Our approach</div>
+          <h2>Useful first.<br>Complicated never.</h2>
+        </div>
+        <div>
+          <p class="about-copy">IYAGI is an independent software development brand. We build applications around real tasks, with an emphasis on practical features and clear, direct user experiences. Each project has its own goals, release schedule, and licensing terms.</p>
+          <div class="principles">
+            <div class="principle"><span class="dot"></span><div><strong>Practical software</strong><span>Features designed around tasks people actually need to do.</span></div></div>
+            <div class="principle"><span class="dot"></span><div><strong>Independent development</strong><span>Products developed and distributed independently.</span></div></div>
+            <div class="principle"><span class="dot"></span><div><strong>Clear project terms</strong><span>Check each project for its supported platforms, releases, and license.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div class="eyebrow">Find IYAGI</div>
+          <h2>Explore what we're building.</h2>
+          <p>Visit our GitHub organization to see available repositories and follow new projects.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://github.com/iyagicom" target="_blank" rel="noopener noreferrer">Visit GitHub ↗</a>
+            <a class="btn" href="https://github.com/iyagicom?tab=repositories" target="_blank" rel="noopener noreferrer">Browse repositories ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© <span id="year">2026</span> IYAGI INC.</span>
+      <span>Practical Software. Independent Development.</span>
+    </div>
+  </footer>
+</body>
+</html>
